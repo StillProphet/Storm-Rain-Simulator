@@ -102,38 +102,20 @@ value = 5.0
 tick_count = 10
 ticks_on_borders = true
 
-[node name="ArrowCount" type="Label" parent="Panel"]
-layout_mode = 2
-offset_left = 9.0
-offset_top = 226.0
-offset_right = 289.0
-offset_bottom = 249.0
-text = "Arrow count"
-
-[node name="ArrowCount2" type="HSlider" parent="Panel"]
-layout_mode = 2
-offset_left = 9.0
-offset_top = 253.0
-offset_right = 289.0
-offset_bottom = 269.0
-min_value = 1.0
-max_value = 500.0
-value = 500.0
-
 [node name="Area" type="Label" parent="Panel"]
 layout_mode = 2
 offset_left = 9.0
-offset_top = 283.0
+offset_top = 241.0
 offset_right = 197.0
-offset_bottom = 306.0
+offset_bottom = 264.0
 text = "PoB Area of effect mod:"
 
 [node name="Area2" type="LineEdit" parent="Panel"]
 layout_mode = 0
 offset_left = 203.0
-offset_top = 280.0
+offset_top = 238.0
 offset_right = 281.0
-offset_bottom = 311.0
+offset_bottom = 269.0
 alignment = 2
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]

@@ -9,7 +9,7 @@ var landingRadius = 1
 var enemySizes = [2, 3, 5, 11]
 var enemySize = 3
 var beamWidth = 1
-var arrowCount = 10
+var arrowCount = 100
 var areaMulti = 1
 
 var arrows : Array
@@ -33,7 +33,6 @@ func _ready():
 	overlap = snapped(hits/beams, 0.001)
 	enemySize = enemySizes[$Panel/EnemySize2.selected] * 10.0
 	projectiles = $Panel/ProjectileNumber2.value
-	arrowCount = $Panel/ArrowCount2.value
 	$Panel/EnemySize2.selected = 1
 	$Panel/Area2.set_text("1.0")
 	landingRadius = snapped((0.5 + projectiles * 0.5 * sqrt(areaMulti)) * 100,0.1)
@@ -46,13 +45,11 @@ func _physics_process(delta):
 	overlap = snapped(hits/beams, 0.001)
 	enemySize = enemySizes[$Panel/EnemySize2.selected] * 10.0
 	projectiles = $Panel/ProjectileNumber2.value
-	arrowCount = $Panel/ArrowCount2.value
 	$Panel/Overlap.set_text("Beam hit ratio: ")
 	$Panel/Overlap2.set_text(str(overlap*100) + "% (" + str(hits) + "/" + str(beams) + ")")
 	$Panel/RadiusRatio.set_text("Radius ratio: " + str(snapped(enemySize/(landingRadius/100),0.1)) + "% (" + str(enemySize/100.0) + "m/" + str(landingRadius/100) + "m)")
 	$Panel/EnemySize.set_text("Enemy Size: ")
 	$Panel/ProjectileNumber.set_text("Number of Projectiles: " + str($Panel/ProjectileNumber2.value))
-	$Panel/ArrowCount.set_text("Arrow count: " + str(arrowCount))
 	if auto:
 		generateRandomPoints()
 
