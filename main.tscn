@@ -40,7 +40,7 @@ offset_left = 9.0
 offset_top = 11.0
 offset_right = 289.0
 offset_bottom = 34.0
-text = "Overlap header"
+text = "Beam overlap chance:"
 
 [node name="Overlap2" type="Label" parent="Panel"]
 layout_mode = 2
@@ -48,7 +48,7 @@ offset_left = 9.0
 offset_top = 38.0
 offset_right = 289.0
 offset_bottom = 61.0
-text = "Overlap value"
+text = "50% (6/12)"
 
 [node name="RadiusRatio" type="Label" parent="Panel"]
 layout_mode = 2
@@ -56,45 +56,50 @@ offset_left = 9.0
 offset_top = 75.0
 offset_right = 289.0
 offset_bottom = 98.0
-text = "Radius ratio"
+text = "Radius ratio: 0.5m/2.0m (25%)"
 
 [node name="EnemySize" type="Label" parent="Panel"]
 layout_mode = 2
 offset_left = 9.0
-offset_top = 112.0
+offset_top = 124.0
 offset_right = 289.0
-offset_bottom = 135.0
-text = "Enemy size header"
+offset_bottom = 147.0
+text = "Enemy size:"
 
-[node name="EnemySizeSlider" type="HSlider" parent="Panel"]
-layout_mode = 2
-offset_left = 9.0
-offset_top = 139.0
-offset_right = 289.0
-offset_bottom = 155.0
-min_value = 2.0
-max_value = 5.0
-value = 3.0
-tick_count = 4
-ticks_on_borders = true
+[node name="EnemySize2" type="OptionButton" parent="Panel"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 120.0
+offset_right = 293.0
+offset_bottom = 151.0
+item_count = 4
+popup/item_0/text = "Small (2)"
+popup/item_0/id = 0
+popup/item_1/text = "Medium (3)"
+popup/item_1/id = 1
+popup/item_2/text = "Large (5)"
+popup/item_2/id = 2
+popup/item_3/text = "Massive (11)"
+popup/item_3/id = 3
 
-[node name="LandingRadius" type="Label" parent="Panel"]
+[node name="ProjectileNumber" type="Label" parent="Panel"]
 layout_mode = 2
 offset_left = 9.0
 offset_top = 169.0
 offset_right = 289.0
 offset_bottom = 192.0
-text = "Landing area radius header"
+text = "Number of projectiles"
 
-[node name="LandingRadius2" type="HSlider" parent="Panel"]
+[node name="ProjectileNumber2" type="HSlider" parent="Panel"]
 layout_mode = 2
 offset_left = 9.0
 offset_top = 196.0
 offset_right = 289.0
 offset_bottom = 212.0
 min_value = 1.0
-max_value = 50.0
-value = 10.0
+max_value = 10.0
+value = 5.0
+tick_count = 10
 ticks_on_borders = true
 
 [node name="ArrowCount" type="Label" parent="Panel"]
@@ -113,8 +118,25 @@ offset_right = 289.0
 offset_bottom = 269.0
 min_value = 1.0
 max_value = 500.0
-value = 10.0
+value = 500.0
+
+[node name="Area" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 283.0
+offset_right = 197.0
+offset_bottom = 306.0
+text = "PoB Area of effect mod:"
+
+[node name="Area2" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 280.0
+offset_right = 281.0
+offset_bottom = 311.0
+alignment = 2
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Reset" to="." method="_on_reset_button_up"]
 [connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="text_changed" from="Panel/Area2" to="." method="_on_area_2_text_changed"]
