@@ -110,6 +110,7 @@ func generateRandomPoints():
 		var x = dist * cos(rota)
 		var y = dist * sin(rota)
 		var location = Vector2(center.x + x,center.y + y)
+		#var location = center + Vector2(randf_range(-landingRadius,landingRadius),randf_range(-landingRadius,landingRadius))
 		if location.distance_to(center) < landingRadius:
 			arrows.append(location)
 			i += 1
