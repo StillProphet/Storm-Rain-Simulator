@@ -1,0 +1,123 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxr1xvj4g2c3y"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_awksn"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_awksn")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 116.0
+offset_bottom = 36.0
+text = "Shoot arrows"
+
+[node name="Reset" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 39.0
+offset_right = 116.0
+offset_bottom = 70.0
+text = "Reset
+"
+
+[node name="CheckBox" type="CheckBox" parent="."]
+offset_left = 119.0
+offset_top = 6.0
+offset_right = 192.0
+offset_bottom = 37.0
+text = "Auto?"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 852.0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Overlap" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 289.0
+offset_bottom = 34.0
+text = "Overlap header"
+
+[node name="Overlap2" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 38.0
+offset_right = 289.0
+offset_bottom = 61.0
+text = "Overlap value"
+
+[node name="RadiusRatio" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 75.0
+offset_right = 289.0
+offset_bottom = 98.0
+text = "Radius ratio"
+
+[node name="EnemySize" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 112.0
+offset_right = 289.0
+offset_bottom = 135.0
+text = "Enemy size header"
+
+[node name="EnemySizeSlider" type="HSlider" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 139.0
+offset_right = 289.0
+offset_bottom = 155.0
+min_value = 2.0
+max_value = 5.0
+value = 3.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="LandingRadius" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 169.0
+offset_right = 289.0
+offset_bottom = 192.0
+text = "Landing area radius header"
+
+[node name="LandingRadius2" type="HSlider" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 196.0
+offset_right = 289.0
+offset_bottom = 212.0
+min_value = 1.0
+max_value = 30.0
+value = 10.0
+tick_count = 30
+ticks_on_borders = true
+
+[node name="ArrowCount" type="Label" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 226.0
+offset_right = 289.0
+offset_bottom = 249.0
+text = "Arrow count"
+
+[node name="ArrowCount2" type="HSlider" parent="Panel"]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 253.0
+offset_right = 289.0
+offset_bottom = 269.0
+min_value = 1.0
+max_value = 500.0
+value = 10.0
+tick_count = 10
+ticks_on_borders = true
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Reset" to="." method="_on_reset_button_up"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
